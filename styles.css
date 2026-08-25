@@ -545,7 +545,7 @@ footer{
   z-index: 200;
   background: rgba(20,13,9,.5);
   backdrop-filter: blur(4px);
-  display: flex;
+  display: none;
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 20px;
@@ -554,7 +554,11 @@ footer{
   transition: opacity .3s var(--ease);
   overflow-y: auto;
 }
-.modal-overlay.open{ opacity: 1; pointer-events: auto; }
+/* .open switches it into the render tree; .is-visible drives the fade.
+   Two classes so JS can flip display:none -> flex a frame before
+   animating opacity (see script.js openModal/closeModal). */
+.modal-overlay.open{ display: flex; }
+.modal-overlay.is-visible{ opacity: 1; pointer-events: auto; }
 .modal-panel{
   width: min(740px, 100%);
   border-radius: var(--radius-lg);
@@ -567,7 +571,7 @@ footer{
   transition: transform .4s var(--ease);
   margin-bottom: 5vh;
 }
-.modal-overlay.open .modal-panel{ transform: translateY(0) scale(1); }
+.modal-overlay.is-visible .modal-panel{ transform: translateY(0) scale(1); }
 .modal-close{
   position: absolute;
   top: 20px; right: 20px;
@@ -859,7 +863,11 @@ body.modal-locked{ overflow: hidden; }
   .why-card{ padding: 22px 18px; }
 
   .form-row{ grid-template-columns: 1fr; }
-  .modal-body{ padding: 32px 20px 26px; }
+  .modal-overlay{ padding: 0; align-items: stretch; }
+  .modal-panel{ width: 100%; min-height: 100%; border-radius: 0; margin-bottom: 0; }
+  .modal-close{ top: 14px; right: 14px; width: 40px; height: 40px; }
+  .modal-body{ padding: 64px 20px 32px; }
+  .modal-body h2{ font-size: clamp(1.4rem, 6vw, 1.9rem); }
   .info-grid{ grid-template-columns: 1fr 1fr; }
   .form-shell{ padding: 26px 20px; margin-bottom: 60px; }
   .apply-hero{ padding: 108px 0 24px; }
