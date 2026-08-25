@@ -9,7 +9,7 @@ const JOBS = {
     schedule: "Full-time",
     hours: "9:00 AM – 6:00 PM",
     experience: "0–1 Year",
-    positions: "5 Openings",
+    positions: "35 Openings",
     description: [
       "As a Data Entry Operator at Jompesh, you'll be responsible for accurately processing, organizing, and maintaining records for our operations team. This role is well suited to someone who is detail-oriented, comfortable working independently, and confident with basic office software.",
       "You'll work closely with a small remote team, receive clear daily targets, and have room to grow into more senior data and operations roles as you build a track record."
@@ -29,7 +29,7 @@ const JOBS = {
     schedule: "Full-time",
     hours: "Evening / Night Shift (Client Timezone)",
     experience: "1+ Year Preferred",
-    positions: "8 Openings",
+    positions: "30 Openings",
     description: [
       "As an International Telemarketing Executive, you'll speak directly with clients abroad, build genuine rapport quickly, and guide conversations toward clear outcomes. This role rewards confidence, clarity, and persistence.",
       "You'll be supported with scripts, live coaching, and a target structure designed to help you grow your earnings as you grow your skill."
