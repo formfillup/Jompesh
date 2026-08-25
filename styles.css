@@ -811,18 +811,76 @@ body.modal-locked{ overflow: hidden; }
   .info-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 760px){
-  .nav-links, .nav-cta .btn-ghost{ display: none; }
+  .nav-links{ display: none; }
+  .nav-cta{ display: none; }
   .hamburger{ display: flex; }
-  .why-grid{ grid-template-columns: 1fr; }
+  .brand .logo-frame img{ height: 36px; }
+
+  /* Hero — kill the excess vertical air, scale type responsively */
+  .hero{
+    min-height: 0;
+    padding: 96px 0 40px;
+  }
+  .hero-inner{ gap: 16px; }
+  .hero h1{ font-size: clamp(1.9rem, 8vw, 2.6rem); max-width: 15ch; }
+  .hero-sub{ font-size: 15px; line-height: 1.55; max-width: 38ch; }
+  .hero-actions{ margin-top: 2px; gap: 10px; }
+  .hero-actions .btn{ padding: 13px 20px; font-size: 14px; }
+
+  /* Stats — always 3 balanced columns, no orphan row */
+  .hero-stats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  .hero-stats .stat{ min-width: 0; }
+  .hero-stats .stat b{ font-size: 17px; }
+  .hero-stats .stat span{ font-size: 10px; letter-spacing: .04em; }
+  .scroll-cue{ display: none; }
+
+  /* Section rhythm — shrink the gap between blocks */
+  .section-pad{ padding: 52px 0; }
+  .section-head{ margin-bottom: 26px; gap: 14px; }
+  .section-head h2{ margin-top: 8px; }
+  .section-head p{ max-width: none; font-size: 14px; }
+
+  /* Job cards — full-width, comfortable, buttons stay side-by-side */
+  .jobs-grid{ gap: 16px; }
+  .job-card{ padding: 22px 20px; }
+  .job-card h3{ font-size: 19px; }
+  .job-meta{ gap: 12px; margin: 10px 0 14px; }
+  .job-desc{ font-size: 14px; margin-bottom: 18px; }
+  .job-card-actions{ gap: 10px; }
+  .job-card-actions .btn{ padding: 12px 8px; font-size: 12.5px; }
+
+  .why-grid{ grid-template-columns: 1fr; gap: 14px; }
+  .why-card{ padding: 22px 18px; }
+
   .form-row{ grid-template-columns: 1fr; }
   .modal-body{ padding: 32px 20px 26px; }
   .info-grid{ grid-template-columns: 1fr 1fr; }
-  .form-shell{ padding: 26px 20px; }
-  .footer-top{ flex-direction: column; }
-  .footer-cols{ gap: 32px; }
-  .brand .logo-frame img{ height: 38px; }
+  .form-shell{ padding: 26px 20px; margin-bottom: 60px; }
+  .apply-hero{ padding: 108px 0 24px; }
+
+  .footer-top{ flex-direction: column; margin-bottom: 30px; }
+  .footer-cols{ gap: 28px; }
+  footer{ padding: 46px 0 24px; }
 }
 @media (max-width: 420px){
-  .brand .logo-frame img{ height: 34px; }
-  .hero-stats{ gap: 30px; }
+  .brand .logo-frame img{ height: 32px; }
+  .hero{ padding: 88px 0 32px; }
+  .hero h1{ max-width: 13ch; }
+  .hero-actions{ flex-direction: column; width: 100%; }
+  .hero-actions .btn{ width: 100%; }
+  .hero-stats{ gap: 6px; margin-top: 24px; }
+  .hero-stats .stat b{ font-size: 15px; }
+  .hero-stats .stat span{ font-size: 9px; }
+  .job-card-actions .btn{ padding: 12px 6px; font-size: 12px; }
+  .info-grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 340px){
+  /* Only stack the job-card buttons on truly extreme widths */
+  .job-card-actions{ flex-direction: column; }
 }
