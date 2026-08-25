@@ -120,13 +120,43 @@ function renderJobModal(jobKey) {
 
 function openModal(jobKey) {
   renderJobModal(jobKey);
+  // Step 1: take it out of `display:none` so it's actually in the layout.
   modalOverlay.classList.add("open");
   document.body.classList.add("modal-locked");
+  // Step 2: on the next frame (after the browser has painted the
+  // display:flex state), add the class that fades/scales it in —
+  // this is what lets it animate instead of just popping into view.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      modalOverlay.classList.add("is-visible");
+    });
+  });
 }
 
 function closeModal() {
-  modalOverlay.classList.remove("open");
+  // Step 1: fade/scale out.
+  modalOverlay.classList.remove("is-visible");
   document.body.classList.remove("modal-locked");
+  // Step 2: once the fade finishes, set display:none again so the
+  // modal stops occupying any space (and can't be focused/read)
+  // while hidden. Falls back to a timeout if transitionend is missed.
+  const finishClose = () => {
+    modalOverlay.classList.remove("open");
+  };
+  let closed = false;
+  const onTransitionEnd = (e) => {
+    if (e.target !== modalOverlay || e.propertyName !== "opacity") return;
+    closed = true;
+    modalOverlay.removeEventListener("transitionend", onTransitionEnd);
+    finishClose();
+  };
+  modalOverlay.addEventListener("transitionend", onTransitionEnd);
+  setTimeout(() => {
+    if (!closed) {
+      modalOverlay.removeEventListener("transitionend", onTransitionEnd);
+      finishClose();
+    }
+  }, 350);
 }
 
 if (modalOverlay) {
