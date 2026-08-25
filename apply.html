@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Jompesh Careers</title>
+<meta name="description" content="Submit your application for a remote position at Jompesh.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scene-bg">
+  <div class="glow-orb gold"></div>
+  <div class="glow-orb burgundy"></div>
+  <div class="glow-orb brown"></div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="logo-frame"><img src="assets/logo.png" alt="Jompesh"></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#positions">Open Positions</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#why-us">Why Join Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#positions" class="btn btn-ghost">All Positions</a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#positions">Open Positions</a>
+  <a href="index.html#how-it-works">How It Works</a>
+  <a href="index.html#why-us">Why Join Us</a>
+</div>
+
+<!-- APPLY HERO -->
+<section class="apply-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Application Form</span>
+    <h1 class="reveal">Take the Next Step<br>In Your Career.</h1>
+    <div class="applying-for reveal" id="applyingForLabel"><span class="dot"></span>Applying for: Data Entry Operator</div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section>
+  <div class="wrap">
+    <form class="form-shell reveal" id="applyForm" novalidate>
+
+      <div class="field readonly">
+        <label for="positionField">Position</label>
+        <input type="text" id="positionField" readonly>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Your full name" required>
+          <span class="field-error">Please enter your full name.</span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="e.g. 01XXXXXXXXX" required>
+          <span class="field-error">Please enter a valid phone number.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+          <span class="field-error">Please enter a valid email address.</span>
+        </div>
+        <div class="field">
+          <label for="address">Present Address</label>
+          <input type="text" id="address" placeholder="City, District" required>
+          <span class="field-error">Please enter your address.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="education">Education Level</label>
+          <select id="education" required>
+            <option value="">Select an option</option>
+            <option>SSC</option>
+            <option>HSC</option>
+            <option>Bachelor's Degree</option>
+            <option>Master's Degree</option>
+            <option>Other</option>
+          </select>
+          <span class="field-error">Please select your education level.</span>
+        </div>
+        <div class="field">
+          <label for="experience">Relevant Experience</label>
+          <select id="experience" required>
+            <option value="">Select an option</option>
+            <option>No Experience</option>
+            <option>Less than 1 Year</option>
+            <option>1–2 Years</option>
+            <option>2+ Years</option>
+          </select>
+          <span class="field-error">Please select your experience level.</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="cvUpload">Upload Your CV</label>
+        <div class="file-upload" id="fileUpload">
+          <input type="file" id="cvUpload" accept=".pdf,.doc,.docx" required>
+          <label for="cvUpload" class="file-upload-label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            <span class="file-upload-text" id="fileUploadText">Choose a file or drag it here</span>
+          </label>
+          <span class="file-upload-hint">PDF or Word, up to 5MB</span>
+        </div>
+        <span class="field-error">Please upload your CV.</span>
+      </div>
+
+      <div class="field">
+        <label for="message">Why should we consider you for this role?</label>
+        <textarea id="message" placeholder="Tell us briefly about yourself and why you're a good fit..." required></textarea>
+        <span class="field-error">Please share a short message.</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Apply for this Position →</button>
+      <p class="form-foot">By applying, you agree to be contacted by the Jompesh recruitment team regarding this position.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-frame"><img src="assets/logo.png" alt="Jompesh"></span>
+        <p>Jompesh Careers connects motivated people with remote roles built for real, long-term growth.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="index.html#positions">Open Positions</a>
+          <a href="index.html#how-it-works">How It Works</a>
+          <a href="index.html#why-us">Why Join Us</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>careers@jompesh.com</p>
+          <p>Dhaka, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jompesh. All rights reserved.</span>
+      <span>Build Your Career From Anywhere.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
